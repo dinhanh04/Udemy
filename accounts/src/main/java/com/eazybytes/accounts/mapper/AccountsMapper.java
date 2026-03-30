@@ -4,7 +4,7 @@ import com.eazybytes.accounts.dto.AccountsDto;
 import com.eazybytes.accounts.entity.Accounts;
 
 public class AccountsMapper {
-    public static AccountsDto mapToAccountsDto(AccountsDto accountsDto, Accounts accounts) {
+    public static AccountsDto mapToAccountsDto(Accounts accounts, AccountsDto accountsDto) {
         accountsDto.setAccountType(accountsDto.getAccountType());
         accountsDto.setBranchAddress(accounts.getBranchAddress());
         return accountsDto;
