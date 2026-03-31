@@ -9,5 +9,5 @@ public class AccountsDto {
 
     private String branchAddress;
 
-    private Long customerId;
+    private Long accountNumber;
 }

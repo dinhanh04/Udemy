@@ -5,13 +5,14 @@ import com.eazybytes.accounts.entity.Accounts;
 
 public class AccountsMapper {
     public static AccountsDto mapToAccountsDto(Accounts accounts, AccountsDto accountsDto) {
-        accountsDto.setAccountType(accountsDto.getAccountType());
+        accountsDto.setAccountType(accounts.getAccountType());
         accountsDto.setBranchAddress(accounts.getBranchAddress());
+        accountsDto.setAccountNumber(accounts.getAccountNumber());
         return accountsDto;
     }
 
     public static Accounts mapToAccounts(Accounts accounts, AccountsDto accountsDto) {
-        accounts.setCustomerId(accountsDto.getCustomerId());
+        accounts.setAccountNumber(accountsDto.getAccountNumber());
         accounts.setAccountType(accounts.getAccountType());
         accounts.setBranchAddress(accountsDto.getBranchAddress());
         return accounts;
