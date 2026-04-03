@@ -33,10 +33,6 @@ public class AccountsServiceImpl implements IAccountsService {
             throw new CustomerAlreadyExistsException("Customer with mobile number " + customerDto.getMobileNumber() + " already exists.");
         }
 
-        customer.setCreatedBy("dinh anh");
-        customer.setCreatedAt(LocalDate.now());
-        customer.setUpdatedBy("dinh anh");
-        customer.setUpdatedAt(LocalDate.now());
         customerRepository.save(customer);
         accountsRepository.save(createAccount(customer));
 
@@ -50,8 +46,6 @@ public class AccountsServiceImpl implements IAccountsService {
         newAccount.setAccountNumber(randomAccountNumber);
         newAccount.setAccountType(AccountsConstants.SAVINGS);
         newAccount.setBranchAddress(AccountsConstants.ADDRESS);
-        newAccount.setCreatedBy("dinh anh");
-        newAccount.setCreatedAt(LocalDate.now());
         return newAccount;
     }
 
